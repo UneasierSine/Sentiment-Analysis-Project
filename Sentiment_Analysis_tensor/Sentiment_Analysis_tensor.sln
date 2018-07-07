@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PythonApplication1", "PythonApplication1\PythonApplication1.pyproj", "{98CFA89F-E05F-4EBB-BC55-79B0E14957AB}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B13EE677-E13F-4FB7-B066-A99AD12134A4}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Sentiment_Analysis_tensor", "Sentiment_Analysis_tensor\Sentiment_Analysis_tensor.pyproj", "{56BA0333-2D2F-41B4-B019-04CFBB27EF05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,13 +11,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{98CFA89F-E05F-4EBB-BC55-79B0E14957AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98CFA89F-E05F-4EBB-BC55-79B0E14957AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56BA0333-2D2F-41B4-B019-04CFBB27EF05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56BA0333-2D2F-41B4-B019-04CFBB27EF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {201B1953-297C-413B-A95D-5E2370D096A2}
+		SolutionGuid = {E50BA5FE-BC9A-48A0-8CBF-4E951435506E}
 	EndGlobalSection
 EndGlobal

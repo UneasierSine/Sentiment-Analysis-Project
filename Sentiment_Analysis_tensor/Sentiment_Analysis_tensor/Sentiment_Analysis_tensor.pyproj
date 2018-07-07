@@ -2,14 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>98cfa89f-e05f-4ebb-bc55-79b0e14957ab</ProjectGuid>
+    <ProjectGuid>56ba0333-2d2f-41b4-b019-04cfbb27ef05</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Sentiment_Analysis_ML.py</StartupFile>
-    <SearchPath>..\glove.6B</SearchPath>
+    <StartupFile>Sentiment_Analysis_tensor.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>PythonApplication1</Name>
-    <RootNamespace>PythonApplication1</RootNamespace>
+    <Name>Sentiment_Analysis_tensor</Name>
+    <RootNamespace>Sentiment_Analysis_tensor</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,7 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Sentiment_Analysis_ML.py" />
+    <Compile Include="Sentiment_Analysis_tensor.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
