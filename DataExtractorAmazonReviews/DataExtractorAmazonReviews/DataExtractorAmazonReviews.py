@@ -9,8 +9,8 @@
 import pandas as pd
 import numpy as np
 from tkinter import Tk
-from tkinter.filedialog import askopenfoldername
 from tkinter.filedialog import askopenfilename
+from tkinter.filedialog import askdirectory
 import os
 import json
 import gzip
@@ -35,7 +35,7 @@ def getDF(path):
 
 # Select directory
 Tk().withdraw()
-path = askopenfoldername()
+path = askdirectory()
 
 # Go through directory
 for review in os.listdir(folder):
