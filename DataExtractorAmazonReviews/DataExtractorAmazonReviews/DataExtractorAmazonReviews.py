@@ -31,7 +31,7 @@ def getDF(path):
     df[i] = d
     i += 1
     if (i % 10) == 0:
-        print('Parsed ', n, 'reviews from ', path)
+        print('Parsed ', i, 'reviews from ', path)
   # Drop unneeded columns and return the data frame with just review text and ratings
   #df.drop(columns=['reviewerID','asin','reviewerName','helpful','summary','unixTimeReview','reviewTime'])
   return pd.DataFrame.from_dict(df, orient='index')
