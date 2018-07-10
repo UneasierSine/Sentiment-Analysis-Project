@@ -30,7 +30,7 @@ def getDF(path):
   for d in parse(path):
     df[i] = d
     i += 1
-    if (i % 10) == 0:
+    if (i % 1000) == 0:
         print('Parsed ', i, 'reviews from ', path)
   # Drop unneeded columns and return the data frame with just review text and ratings
   #df.drop(columns=['reviewerID','asin','reviewerName','helpful','summary','unixTimeReview','reviewTime'])
