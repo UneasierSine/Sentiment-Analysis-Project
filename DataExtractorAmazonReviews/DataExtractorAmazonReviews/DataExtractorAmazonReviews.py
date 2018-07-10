@@ -18,33 +18,45 @@ import gzip
 #Used on Amazon Reviews:
 def parse(path):
     # Access the json.gz
-  g = gzip.open(path, 'rb')
-  for l in g:
-    yield eval(l)
+    g = gzip.open(path, 'rb')
+    for l in g:
+        yield eval(l)
 
 def getDF(path):
   i = 0
   df = {}
+  print('Began parsing ', name)
   # Update the dataframe
   for d in parse(path):
     df[i] = d
     i += 1
+    if (i % 10) == 0:
+        print('Parsed ', n, 'reviews from ', path)
   # Drop unneeded columns and return the data frame with just review text and ratings
-  df.drop(columns=['reviewerID','asin','reviewerName','helpful','summary','unixTimeReview','reviewTime'])
+  #df.drop(columns=['reviewerID','asin','reviewerName','helpful','summary','unixTimeReview','reviewTime'])
   return pd.DataFrame.from_dict(df, orient='index')
 
 # Select directory
 Tk().withdraw()
-path = askdirectory()
+directory = askdirectory()
+
+n = 0
+files = {}
+
+for root, dirs, files in os.walk(str(directory)):
+    for name in files:
+        files[n] = os.path.join(root, name)
+        print('Completed entering file: ', name)
 
 # Go through directory
-for review in os.listdir(folder):
+for review in files:
     # Get name of review category
     reviewString = str(review)[8 : -8]
     # Save to pd data frame
-    df = getDF(review)
+    df = getDF(str(review))
+    print(df)
     # Save data frame to a pickle
-    df.to_pickle("C:/TrainingData/amazon_pickles/" + reviewString + ".pkl")
+    #df.to_pickle("C:/TrainingData/amazon_pickles/" + reviewString + ".pkl")
 
 
 
