@@ -14,6 +14,9 @@ filePath = askopenfilename()
 #Open the GloVe file
 f = open(filePath,mode='r',encoding="utf-8")
 
+dataFile = open('Results_Of_Training.txt', mode='at')
+dataFile.write("==========New=Training=Run==========")
+
 #Feed the GloVe into a numpy array of vector[word]
 words = {}
 for line in f:
@@ -26,19 +29,22 @@ for line in f:
 vocabulary_size = len(words)
 (X_train, y_train), (X_test, y_test) = imdb.load_data(num_words = vocabulary_size)
 print('Loaded dataset with {} training samples, {} test samples'.format(len(X_train), len(X_test)))
+dataFile.write('Loaded dataset with {} training samples, {} test samples'.format(len(X_train), len(X_test)))
 
 max_words = 500
 X_train = sequence.pad_sequences(X_train, maxlen=max_words)
 X_test = sequence.pad_sequences(X_test, maxlen=max_words)
 print("Padded the testing and training data to 500 words")
+dataFile.write("Padded the testing and training data to 500 words")
 
 embedding_size = len(words['the'])
 model = Sequential()
 model.add(Embedding(vocabulary_size, embedding_size, input_length=max_words))
-model.add(LSTM(500))
+model.add(LSTM(1000))
 model.add(Dense(1, activation='sigmoid'))
 
 print(model.summary())
+dataFile.write(str(model.summary()))
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 batch_size = 64
@@ -51,3 +57,4 @@ model.fit(X_train2, y_train2, validation_data=(X_valid, y_valid), batch_size=bat
 
 scores = model.evaluate(X_test, y_test)
 print('Test Accuracy: ', scores[1])
+dataFile.write(str('Test Accuracy: ', scores[1]))
